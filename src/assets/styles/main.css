@@ -1,0 +1,274 @@
+/* ==========================================================================
+   Design tokens
+   ========================================================================== */
+:root {
+  --color-blush: #fde4ec;
+  --color-rose: #f4a7c0;
+  --color-royal: #d4537e;
+  --color-royal-dark: #a8325e;
+  --color-lavender: #d9c8f0;
+  --color-lilac: #9b7fc7;
+  --color-sky: #cfe8f7;
+  --color-gold: #c9a24b;
+  --color-gold-light: #ecd9a0;
+  --color-gold-dark: #9c7426;
+  --color-cream: #fffaf6;
+  --color-ink: #4a2c3d;
+  --color-muted: #8a6b7c;
+  --color-danger: #c0392b;
+
+  --font-script: 'Great Vibes', 'Brush Script MT', cursive;
+  --font-display: 'Cinzel', 'Times New Roman', serif;
+  --font-body: 'Quicksand', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+
+  --shadow-soft: 0 10px 30px -12px rgba(168, 50, 94, 0.25);
+  --shadow-card: 0 18px 40px -22px rgba(122, 52, 95, 0.45);
+
+  --container: 480px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 16px;
+}
+
+html.is-locked,
+html.is-locked body {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-ink);
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(244, 167, 192, 0.38), transparent 45%),
+    radial-gradient(circle at 88% 32%, rgba(217, 200, 240, 0.5), transparent 50%),
+    radial-gradient(circle at 18% 88%, rgba(207, 232, 247, 0.55), transparent 50%),
+    linear-gradient(180deg, #fff6f9 0%, #fdf0f6 50%, #f8f0fb 100%);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(212, 83, 126, 0.45);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.section {
+  position: relative;
+  padding-block: 56px;
+}
+
+/* ==========================================================================
+   Card
+   ========================================================================== */
+.card {
+  position: relative;
+  padding: 28px 22px;
+  border: 1px solid rgba(201, 162, 75, 0.35);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--shadow-card);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(201, 162, 75, 0.2);
+  border-radius: calc(var(--radius-lg) - 6px);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 0.2s var(--ease-out),
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.btn--primary {
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-royal) 0%, #e57fa6 100%);
+  box-shadow: 0 12px 24px -12px rgba(212, 83, 126, 0.75);
+}
+
+.btn--outline {
+  color: var(--color-royal-dark);
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(212, 83, 126, 0.35);
+}
+
+.btn--sm {
+  min-height: 42px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+}
+
+/* Scroll reveal (see directives/reveal.ts) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s var(--ease-out) var(--reveal-delay, 0ms),
+    transform 0.8s var(--ease-out) var(--reveal-delay, 0ms);
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Shared transitions */
+.fade-swap-enter-active,
+.fade-swap-leave-active {
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s var(--ease-out);
+}
+
+.fade-swap-enter-from,
+.fade-swap-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
