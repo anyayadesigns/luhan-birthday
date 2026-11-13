@@ -40,7 +40,7 @@ function addToDeviceCalendar(): void {
           <h3 class="detail__title">When</h3>
           <p class="detail__primary">{{ dateLabel }}</p>
           <p class="detail__secondary">{{ timeLabel }}</p>
-          <div class="detail__actions">
+          <div class="detail__actions detail__actions--split">
             <a
               :href="googleCalendarUrl"
               class="btn btn--outline btn--sm"
@@ -142,6 +142,35 @@ function addToDeviceCalendar(): void {
   justify-content: center;
   gap: 10px;
   margin-top: 18px;
+}
+
+.detail__actions--split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.detail__actions--split .btn {
+  min-width: 0;
+  min-height: 40px;
+  padding: 8px 14px;
+  white-space: nowrap;
+  justify-content: center;
+}
+
+@media (max-width: 420px) {
+  .detail__actions--split .btn {
+    font-size: 0.72rem;
+    padding: 8px 12px;
+    letter-spacing: 0;
+  }
+}
+
+@media (max-width: 340px) {
+  .detail__actions--split .btn {
+    font-size: 0.66rem;
+    padding: 8px 8px;
+  }
 }
 
 .palette {

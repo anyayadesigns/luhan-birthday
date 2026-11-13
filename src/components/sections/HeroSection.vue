@@ -2,6 +2,7 @@
 import BaseIcon from '@/components/base/BaseIcon.vue'
 import CastleIllustration from '@/components/ornaments/CastleIllustration.vue'
 import FlyingButterflies from '@/components/ornaments/FlyingButterflies.vue'
+import MiniFireworks from '@/components/ornaments/MiniFireworks.vue'
 import RoyalCrown from '@/components/ornaments/RoyalCrown.vue'
 import { eventConfig } from '@/config/event'
 import { formatTime, getDateParts } from '@/utils/date'
@@ -18,6 +19,7 @@ const time = formatTime(schedule.start, schedule.timeZone)
 
 <template>
   <section class="hero" :class="{ 'is-active': active }" aria-labelledby="hero-title">
+    <MiniFireworks v-if="active" />
     <FlyingButterflies v-if="active" class="hero__butterflies" />
     <div class="container hero__inner">
       <p class="hero__eyebrow animate" style="--i: 0">

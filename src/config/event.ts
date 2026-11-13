@@ -111,7 +111,7 @@ export interface EventConfig {
 
 export const eventConfig: EventConfig = {
   celebrant: {
-    name: 'Luhan Marie',
+    name: 'Luhan Amari',
     age: 1,
     ageLabel: '1st',
     photo: {

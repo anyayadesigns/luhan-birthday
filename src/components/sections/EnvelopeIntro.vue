@@ -136,7 +136,7 @@ onBeforeUnmount(unlockScroll)
   display: block;
   width: min(80vw, 320px);
   aspect-ratio: 3 / 2;
-  margin: 72px auto 0;
+  margin: clamp(120px, 38vw, 150px) auto 0;
   padding: 0;
   border: 0;
   background: none;
