@@ -19,7 +19,6 @@ const time = formatTime(schedule.start, schedule.timeZone)
 
 <template>
   <section class="hero" :class="{ 'is-active': active }" aria-labelledby="hero-title">
-    <MiniFireworks v-if="active" />
     <FlyingButterflies v-if="active" class="hero__butterflies" />
     <div class="container hero__inner">
       <p class="hero__eyebrow animate" style="--i: 0">
@@ -27,6 +26,7 @@ const time = formatTime(schedule.start, schedule.timeZone)
       </p>
 
       <div class="hero__visual animate" style="--i: 1">
+        <MiniFireworks v-if="active" class="hero__fireworks" />
         <CastleIllustration class="hero__castle" />
         <figure class="hero__portrait">
           <RoyalCrown class="hero__portrait-crown" />
@@ -80,6 +80,14 @@ const time = formatTime(schedule.start, schedule.timeZone)
 </template>
 
 <style scoped>
+.hero__visual {
+  position: relative;
+}
+
+.hero__fireworks {
+  inset: -24% 0 45% !important;
+  overflow: visible !important;
+}
 .hero {
   position: relative;
   min-height: 100vh;

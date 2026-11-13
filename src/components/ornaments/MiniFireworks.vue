@@ -1,13 +1,13 @@
 <script setup lang="ts">
 /** Soft, looping mini firework bursts used as a decorative hero background. */
 const bursts = [
-  { x: 14, y: 14, color: '#f29bbf', delay: 0, size: 70 },
-  { x: 82, y: 10, color: '#c9a24b', delay: 1.1, size: 60 },
-  { x: 88, y: 42, color: '#b9a0e6', delay: 2.3, size: 54 },
-  { x: 8, y: 48, color: '#8fc9ec', delay: 3.0, size: 50 },
-  { x: 50, y: 6, color: '#f7b2cc', delay: 1.8, size: 46 },
-  { x: 24, y: 78, color: '#e8c97a', delay: 3.7, size: 44 },
-  { x: 78, y: 74, color: '#f29bbf', delay: 0.6, size: 48 },
+  { x: 16, y: 32, color: '#f29bbf', delay: 0, size: 50 },
+  { x: 84, y: 28, color: '#c9a24b', delay: 1.1, size: 48 },
+  { x: 50, y: 12, color: '#b9a0e6', delay: 2.2, size: 54 },
+  { x: 30, y: 12, color: '#8fc9ec', delay: 3.0, size: 40 },
+  { x: 70, y: 14, color: '#f7b2cc', delay: 1.7, size: 42 },
+  { x: 12, y: 68, color: '#e8c97a', delay: 3.6, size: 36 },
+  { x: 88, y: 64, color: '#f29bbf', delay: 0.6, size: 38 },
 ]
 const rays = 10
 </script>
