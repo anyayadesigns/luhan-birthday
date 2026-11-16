@@ -12,7 +12,8 @@ defineProps<{ guestName?: string }>()
 
 const emit = defineEmits<{ open: [] }>()
 
-const OPEN_ANIMATION_MS = 3400
+/** Together with App.vue's 700ms exit transition, opening takes two seconds. */
+const OPEN_ANIMATION_MS = 1300
 
 const { celebrant } = eventConfig
 const isOpening = ref(false)
