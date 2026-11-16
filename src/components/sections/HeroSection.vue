@@ -30,7 +30,6 @@ const time = formatTime(schedule.start, schedule.timeZone)
       </svg>
       <p class="hero__eyebrow animate" style="--i: 0">A little magic. A lot of sweetness.</p>
       <h1 id="hero-title" class="hero__name animate" style="--i: 1">{{ celebrant.name }}</h1>
-      <p class="hero__subtitle animate" style="--i: 2">A Sweet First Birthday!</p>
 
       <div class="hero__visual animate" style="--i: 3">
         <CandyScenery class="hero__scenery" :animated="active" />
@@ -145,39 +144,15 @@ const time = formatTime(schedule.start, schedule.timeZone)
   font-family: var(--font-script);
   font-size: clamp(3.3rem, 14.2vw, 4.5rem);
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.2;
   color: var(--candy-berry);
-}
-.hero__subtitle {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin-top: 6px;
-  padding: 5px 14px;
-  border: 1px solid #efdeeb;
-  border-radius: 999px;
-  background: #fffdf9;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--candy-muted);
-}
-.hero__subtitle::before,
-.hero__subtitle::after {
-  content: '';
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #e8b7ce;
-}
-.hero__subtitle::after {
-  background: #b8d9ce;
 }
 .hero__visual {
   position: relative;
   width: 100%;
   max-width: 400px;
   aspect-ratio: 400 / 335;
-  margin-top: 14px;
+  margin-top: 4px;
 }
 .hero__scenery {
   position: absolute;
