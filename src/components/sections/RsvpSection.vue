@@ -80,7 +80,10 @@ const attendanceOptions: { value: Attendance; title: string; hint: string }[] = 
                   v-for="option in attendanceOptions"
                   :key="option.value"
                   class="choice"
-                  :class="{ 'is-selected': form.attendance === option.value, 'has-error': errors.attendance }"
+                  :class="{
+                    'is-selected': form.attendance === option.value,
+                    'has-error': errors.attendance,
+                  }"
                 >
                   <input
                     v-model="form.attendance"
@@ -208,7 +211,7 @@ const attendanceOptions: { value: Attendance; title: string; hint: string }[] = 
 
 .field__input:focus {
   outline: none;
-  border-color: var(--color-royal);
+  border-color: var(--color-berry);
   box-shadow: 0 0 0 4px rgba(212, 83, 126, 0.15);
 }
 
@@ -272,7 +275,7 @@ const attendanceOptions: { value: Attendance; title: string; hint: string }[] = 
 }
 
 .choice.is-selected {
-  border-color: var(--color-royal);
+  border-color: var(--color-berry);
   background: linear-gradient(180deg, #fff, var(--color-blush));
   box-shadow: 0 10px 20px -14px rgba(212, 83, 126, 0.8);
 }
@@ -293,13 +296,13 @@ const attendanceOptions: { value: Attendance; title: string; hint: string }[] = 
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--color-royal);
+  background: var(--color-berry);
   transform: scale(0);
   transition: transform 0.2s var(--ease-out);
 }
 
 .choice.is-selected .choice__mark {
-  border-color: var(--color-royal);
+  border-color: var(--color-berry);
 }
 
 .choice.is-selected .choice__mark::after {
@@ -336,11 +339,11 @@ const attendanceOptions: { value: Attendance; title: string; hint: string }[] = 
   margin-bottom: 6px;
   font-family: var(--font-script);
   font-size: 2rem;
-  color: var(--color-royal);
+  color: var(--color-berry);
 }
 
 .rsvp__closed a {
   font-weight: 700;
-  color: var(--color-royal-dark);
+  color: var(--color-berry-dark);
 }
 </style>

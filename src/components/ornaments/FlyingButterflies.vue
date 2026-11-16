@@ -14,12 +14,56 @@ interface Butterfly {
 
 /** Theme-coloured butterflies; positions and timings are fixed so the layout stays predictable. */
 const butterflies: Butterfly[] = [
-  { id: 1, colors: ['#f08bb0', '#f8c8dc'], size: 34, path: 1, top: '14%', left: '6%', duration: 14, delay: 0 },
-  { id: 2, colors: ['#b597e0', '#e2d4f7'], size: 28, path: 2, top: '30%', left: '78%', duration: 17, delay: -4 },
-  { id: 3, colors: ['#7fbfe6', '#cfe8f7'], size: 24, path: 3, top: '52%', left: '10%', duration: 15, delay: -8 },
-  { id: 4, colors: ['#d8b25a', '#f6e3a1'], size: 26, path: 1, top: '66%', left: '82%', duration: 18, delay: -2 },
-  { id: 5, colors: ['#d4537e', '#f4a7c0'], size: 22, path: 2, top: '8%', left: '62%', duration: 16, delay: -10 },
-  { id: 6, colors: ['#9b7fc7', '#d9c8f0'], size: 20, path: 3, top: '82%', left: '40%', duration: 19, delay: -6 },
+  {
+    id: 1,
+    colors: ['#d7b6e9', '#eee0f6'],
+    size: 30,
+    path: 1,
+    top: '12%',
+    left: '5%',
+    duration: 8,
+    delay: -2,
+  },
+  {
+    id: 2,
+    colors: ['#edb1ce', '#f9dce9'],
+    size: 32,
+    path: 2,
+    top: '35%',
+    left: '86%',
+    duration: 10,
+    delay: -5,
+  },
+  {
+    id: 3,
+    colors: ['#a9d4c7', '#dbefe6'],
+    size: 26,
+    path: 3,
+    top: '77%',
+    left: '7%',
+    duration: 9,
+    delay: -4,
+  },
+  {
+    id: 4,
+    colors: ['#b7d9ed', '#e0eff8'],
+    size: 24,
+    path: 1,
+    top: '45%',
+    left: '3%',
+    duration: 11,
+    delay: -6,
+  },
+  {
+    id: 5,
+    colors: ['#efc5b5', '#f9e5da'],
+    size: 28,
+    path: 2,
+    top: '80%',
+    left: '84%',
+    duration: 12,
+    delay: -3,
+  },
 ]
 </script>
 
@@ -38,7 +82,7 @@ const butterflies: Butterfly[] = [
         animationDelay: `${b.delay}s`,
       }"
     >
-      <svg viewBox="0 0 40 32" class="butterfly__svg">
+      <svg viewBox="0 0 40 32" class="butterfly__svg" focusable="false">
         <!-- Left wings -->
         <g class="butterfly__wing butterfly__wing--left">
           <path d="M20 15C16 4 6 0 2.5 4 0 8 6 15 20 16Z" :fill="b.colors[0]" />
@@ -53,7 +97,13 @@ const butterflies: Butterfly[] = [
         </g>
         <!-- Body & antennae -->
         <rect x="19" y="9" width="2" height="15" rx="1" fill="#6b3a55" />
-        <path d="M20 10c-1-4-3-6-5-7M20 10c1-4 3-6 5-7" stroke="#6b3a55" stroke-width="0.8" fill="none" stroke-linecap="round" />
+        <path
+          d="M20 10c-1-4-3-6-5-7M20 10c1-4 3-6 5-7"
+          stroke="#6b3a55"
+          stroke-width="0.8"
+          fill="none"
+          stroke-linecap="round"
+        />
       </svg>
     </span>
   </div>
@@ -72,7 +122,6 @@ const butterflies: Butterfly[] = [
   display: block;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  will-change: transform;
   filter: drop-shadow(0 4px 6px rgba(168, 50, 94, 0.18));
 }
 
@@ -87,33 +136,30 @@ const butterflies: Butterfly[] = [
 .butterfly__wing {
   transform-box: view-box;
   transform-origin: 20px 16px;
-  animation: flap 0.32s ease-in-out infinite alternate;
+  animation: flap 0.65s ease-in-out infinite alternate;
 }
 
 .butterfly__wing--right {
   animation-delay: 0.02s;
 }
 
-/* Flight paths: wander around their starting point and return seamlessly */
+/* Small paths keep the butterflies in the margins, away from the portrait. */
 .butterfly--path-1 {
-  animation-name: fly-1;
+  animation-name: fly-left;
 }
-
 .butterfly--path-2 {
-  animation-name: fly-2;
+  animation-name: fly-right;
 }
-
 .butterfly--path-3 {
-  animation-name: fly-3;
+  animation-name: fly-left;
 }
 
 @keyframes flap {
   from {
     transform: scaleX(1);
   }
-
   to {
-    transform: scaleX(0.25);
+    transform: scaleX(0.3);
   }
 }
 
@@ -122,72 +168,42 @@ const butterflies: Butterfly[] = [
   100% {
     translate: 0 0;
   }
-
   50% {
-    translate: 0 -6px;
+    translate: 0 -4px;
   }
 }
 
-@keyframes fly-1 {
+@keyframes fly-left {
   0%,
   100% {
-    transform: translate(0, 0) rotate(8deg);
+    transform: translate(0, 0) rotate(-12deg);
   }
-
-  25% {
-    transform: translate(26vw, 6vh) rotate(18deg);
-  }
-
-  50% {
-    transform: translate(48vw, -4vh) rotate(-6deg) scaleX(-1);
-  }
-
-  75% {
-    transform: translate(18vw, 10vh) rotate(-14deg) scaleX(-1);
-  }
-}
-
-@keyframes fly-2 {
-  0%,
-  100% {
-    transform: translate(0, 0) rotate(-10deg) scaleX(-1);
-  }
-
-  30% {
-    transform: translate(-30vw, 8vh) rotate(-20deg) scaleX(-1);
-  }
-
-  60% {
-    transform: translate(-50vw, -6vh) rotate(6deg);
-  }
-
-  85% {
-    transform: translate(-16vw, -10vh) rotate(14deg);
-  }
-}
-
-@keyframes fly-3 {
-  0%,
-  100% {
-    transform: translate(0, 0) rotate(4deg);
-  }
-
   35% {
-    transform: translate(34vw, -10vh) rotate(16deg);
+    transform: translate(5px, -12px) rotate(8deg);
   }
-
-  65% {
-    transform: translate(56vw, 4vh) rotate(-8deg) scaleX(-1);
+  70% {
+    transform: translate(-3px, 8px) rotate(-4deg);
   }
+}
 
-  85% {
-    transform: translate(22vw, 8vh) rotate(-12deg) scaleX(-1);
+@keyframes fly-right {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(12deg);
+  }
+  35% {
+    transform: translate(-6px, 10px) rotate(-8deg);
+  }
+  70% {
+    transform: translate(2px, -10px) rotate(4deg);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .butterflies {
-    display: none;
+  .butterfly,
+  .butterfly__svg,
+  .butterfly__wing {
+    animation: none;
   }
 }
 </style>

@@ -62,6 +62,8 @@ export interface EventConfig {
   features?: {
     /** Toggle visibility of RSVP button and section. */
     showRsvp?: boolean
+    /** Toggle visibility of Dress Code card. */
+    showDressCode?: boolean
   }
   rsvp: {
     /** ISO 8601 date-time. After this moment the form is closed. */
@@ -116,13 +118,13 @@ export const eventConfig: EventConfig = {
     ageLabel: '1st',
     photo: {
       src: publicAsset('images/luhan.jpg'),
-      alt: 'Luhan Marie smiling in a magenta headband',
+      alt: 'Luhan Amari smiling in a magenta headband',
       width: 287,
       height: 323,
     },
   },
   hosts: 'Mommy & Daddy',
-  hashtag: '#LuhanMarieTurns1',
+  hashtag: '#LuhanAmariTurns1',
   schedule: {
     start: '2026-12-30T15:00:00+08:00',
     end: '2026-12-30T17:00:00+08:00',
@@ -134,9 +136,8 @@ export const eventConfig: EventConfig = {
     mapUrl: 'https://maps.app.goo.gl/FgbyY92ihk5GnAVk9',
   },
   dressCode: {
-    title: 'Royal Pastels',
-    description:
-      'Come dressed as your favorite princess or prince, or in soft pastel shades fit for a royal ball.',
+    title: 'Candy Pastels',
+    description: 'Wear your favorite soft pastel shades for a day in our candy fairytale land.',
     palette: [
       { name: 'Blush Pink', hex: '#F8C8DC' },
       { name: 'Lavender', hex: '#D9C8F0' },
@@ -146,6 +147,7 @@ export const eventConfig: EventConfig = {
   },
   features: {
     showRsvp: false,
+    showDressCode: false,
   },
   rsvp: {
     deadline: '2026-12-15T23:59:59+08:00',
@@ -169,48 +171,48 @@ export const eventConfig: EventConfig = {
     },
   },
   giftNote:
-    'Your presence is the most precious gift. Should you wish to bless our little princess, a contribution to her savings would be truly appreciated.',
+    'Your presence is the most precious gift. Should you wish to bless our little sweetheart, a contribution to her savings would be truly appreciated.',
   // To add more photos: drop the file into `public/images/` and add an entry below.
   // Keep width/height in sync with the actual image so the masonry layout stays accurate.
   gallery: [
     {
       src: publicAsset('images/luhan.jpg'),
-      alt: 'Luhan Marie laughing in a magenta headband, with the words "haha wow!"',
+      alt: 'Luhan Amari laughing in a magenta headband, with the words "haha wow!"',
       width: 287,
       height: 323,
       caption: 'Giggles all day',
     },
     {
       src: publicAsset('images/photo-1.jpg'),
-      alt: 'Luhan Marie resting her cheeks on her hands, with the words "sorry, too cute"',
+      alt: 'Luhan Amari resting her cheeks on her hands, with the words "sorry, too cute"',
       width: 276,
       height: 276,
       caption: 'Too cute to handle',
     },
     {
       src: publicAsset('images/photo-2.jpg'),
-      alt: 'Luhan Marie blowing a kiss surrounded by hearts, with the word "mwah!"',
+      alt: 'Luhan Amari blowing a kiss surrounded by hearts, with the word "mwah!"',
       width: 285,
       height: 281,
-      caption: 'Sending royal kisses',
+      caption: 'Sending sweet kisses',
     },
     {
       src: publicAsset('images/photo-3.jpg'),
-      alt: 'Luhan Marie with a finger on her chin looking curious, with the word "hmmm?"',
+      alt: 'Luhan Amari with a finger on her chin looking curious, with the word "hmmm?"',
       width: 320,
       height: 320,
       caption: 'Little thinker',
     },
     {
       src: publicAsset('images/photo-4.jpg'),
-      alt: 'Luhan Marie sleeping on her hands, with the words "good night"',
+      alt: 'Luhan Amari sleeping on her hands, with the words "good night"',
       width: 355,
       height: 357,
-      caption: 'Sweet dreams, princess',
+      caption: 'Sweet dreams, little one',
     },
     {
       src: publicAsset('images/photo-5.jpg'),
-      alt: 'Luhan Marie giggling with her hand over her mouth, with the word "hehehe"',
+      alt: 'Luhan Amari giggling with her hand over her mouth, with the word "hehehe"',
       width: 289,
       height: 286,
       caption: 'Shy little giggles',

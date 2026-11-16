@@ -32,7 +32,7 @@ const { isPlaying, toggle } = useBackgroundMusic()
   border: 2px solid #fff;
   border-radius: 50%;
   color: #fff;
-  background: linear-gradient(135deg, var(--color-royal), var(--color-lilac));
+  background: linear-gradient(135deg, var(--color-berry), var(--color-lilac));
   opacity: 0.92;
   box-shadow: 0 10px 24px -8px rgba(168, 50, 94, 0.6);
   cursor: pointer;

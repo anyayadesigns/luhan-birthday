@@ -16,7 +16,7 @@ const mapUrl = venue.mapUrl || buildMapUrl(fullAddress)
 
 const calendarEvent: CalendarEvent = {
   title: `${celebrant.name}'s ${celebrant.ageLabel} Birthday`,
-  description: `Join ${hosts} in celebrating Princess ${celebrant.name}'s ${celebrant.ageLabel} birthday!`,
+  description: `Join ${hosts} in celebrating ${celebrant.name}'s ${celebrant.ageLabel} birthday!`,
   location: fullAddress,
   start: schedule.start,
   end: schedule.end,
@@ -25,14 +25,18 @@ const calendarEvent: CalendarEvent = {
 const googleCalendarUrl = buildGoogleCalendarUrl(calendarEvent)
 
 function addToDeviceCalendar(): void {
-  downloadIcsFile(calendarEvent, 'luhan-marie-1st-birthday.ics')
+  downloadIcsFile(calendarEvent, 'luhan-amari-1st-birthday.ics')
 }
 </script>
 
 <template>
   <section id="details" class="section details" aria-labelledby="details-title">
     <div class="container">
-      <SectionHeading heading-id="details-title" eyebrow="You're invited to" title="The Royal Ball" />
+      <SectionHeading
+        heading-id="details-title"
+        eyebrow="You're invited to"
+        title="A Sweet Celebration"
+      />
 
       <div class="details__list">
         <article v-reveal class="card detail">
@@ -61,14 +65,23 @@ function addToDeviceCalendar(): void {
           <p class="detail__primary">{{ venue.name }}</p>
           <p class="detail__secondary">{{ venue.address }}</p>
           <div class="detail__actions">
-            <a :href="mapUrl" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">
+            <a
+              :href="mapUrl"
+              class="btn btn--primary btn--sm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <BaseIcon name="map-pin" />
               Get Directions
             </a>
           </div>
         </article>
 
-        <article v-reveal="80" class="card detail">
+        <article
+          v-if="eventConfig.features?.showDressCode !== false"
+          v-reveal="80"
+          class="card detail"
+        >
           <span class="detail__icon"><BaseIcon name="dress" /></span>
           <h3 class="detail__title">Dress Code</h3>
           <p class="detail__primary">{{ dressCode.title }}</p>
@@ -98,7 +111,13 @@ function addToDeviceCalendar(): void {
 }
 
 .detail {
+  border-color: #e7d7e9;
+  border-radius: 28px;
   text-align: center;
+}
+
+.detail::before {
+  content: none;
 }
 
 .detail__icon {
@@ -107,10 +126,10 @@ function addToDeviceCalendar(): void {
   width: 52px;
   height: 52px;
   margin: 0 auto 12px;
-  border-radius: 50%;
-  color: var(--color-royal);
+  border-radius: 18px 24px 18px 24px;
+  color: var(--color-berry);
   background: linear-gradient(135deg, var(--color-blush), #f3e6fb);
-  box-shadow: inset 0 0 0 1px rgba(201, 162, 75, 0.4);
+  box-shadow: inset 0 0 0 1px rgba(190, 159, 200, 0.4);
 }
 
 .detail__title {
@@ -119,7 +138,16 @@ function addToDeviceCalendar(): void {
   font-weight: 700;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--color-gold-dark);
+  color: var(--color-plum);
+}
+
+.detail:nth-child(2) .detail__icon {
+  background: #e0eee7;
+  color: #52776c;
+}
+.detail:last-child .detail__icon {
+  background: #eee5f8;
+  color: #80629c;
 }
 
 .detail__primary {
@@ -152,7 +180,7 @@ function addToDeviceCalendar(): void {
 
 .detail__actions--split .btn {
   min-width: 0;
-  min-height: 40px;
+  min-height: 44px;
   padding: 8px 14px;
   white-space: nowrap;
   justify-content: center;
@@ -195,7 +223,7 @@ function addToDeviceCalendar(): void {
   border-radius: 50%;
   border: 3px solid #fff;
   box-shadow:
-    0 0 0 1px rgba(201, 162, 75, 0.45),
+    0 0 0 1px rgba(190, 159, 200, 0.45),
     0 6px 12px -6px rgba(122, 52, 95, 0.4);
 }
 

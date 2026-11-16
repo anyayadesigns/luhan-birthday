@@ -66,7 +66,7 @@ function increment(): void {
   border: 0;
   border-radius: 50%;
   color: #fff;
-  background: linear-gradient(135deg, var(--color-royal), #e57fa6);
+  background: linear-gradient(135deg, var(--color-berry), #e57fa6);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition:
@@ -88,6 +88,6 @@ function increment(): void {
   font-size: 1.5rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  color: var(--color-royal-dark);
+  color: var(--color-berry-dark);
 }
 </style>

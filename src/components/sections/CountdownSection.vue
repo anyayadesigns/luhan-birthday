@@ -24,12 +24,12 @@ const pad = (value: number): string => String(value).padStart(2, '0')
       <SectionHeading
         heading-id="countdown-title"
         eyebrow="Counting down to"
-        title="The Royal Day"
+        title="A Sprinkle of Anticipation"
       />
 
       <div v-if="isComplete" v-reveal class="card countdown__complete">
-        <p class="countdown__complete-title">The royal celebration is here!</p>
-        <p>Happy {{ celebrant.ageLabel }} Birthday, Princess {{ celebrant.name }}!</p>
+        <p class="countdown__complete-title">The sweetest day is here!</p>
+        <p>Happy {{ celebrant.ageLabel }} Birthday, {{ celebrant.name }}!</p>
       </div>
 
       <div v-else v-reveal class="countdown__grid" role="timer" aria-live="off">
@@ -59,10 +59,20 @@ const pad = (value: number): string => String(value).padStart(2, '0')
   flex-direction: column;
   align-items: center;
   padding: 16px 4px 12px;
-  border: 1px solid rgba(201, 162, 75, 0.4);
-  border-radius: var(--radius-md);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(253, 228, 236, 0.85));
+  border: 1px solid rgba(190, 159, 200, 0.4);
+  border-radius: 32px 32px 20px 20px;
+  background: #fbe2ec;
   box-shadow: var(--shadow-soft);
+}
+
+.countdown__unit:nth-child(2) {
+  background: #eee5f8;
+}
+.countdown__unit:nth-child(3) {
+  background: #e1f0e8;
+}
+.countdown__unit:nth-child(4) {
+  background: #e3eff9;
 }
 
 .countdown__unit::after {
@@ -71,8 +81,8 @@ const pad = (value: number): string => String(value).padStart(2, '0')
   top: 50%;
   left: 8px;
   right: 8px;
-  height: 1px;
-  background: rgba(201, 162, 75, 0.15);
+  height: 0;
+  background: rgba(190, 159, 200, 0.15);
 }
 
 .countdown__value {
@@ -82,14 +92,14 @@ const pad = (value: number): string => String(value).padStart(2, '0')
   font-weight: 700;
   line-height: 1.1;
   font-variant-numeric: tabular-nums;
-  color: var(--color-royal-dark);
+  color: var(--color-berry-dark);
 }
 
 .countdown__label {
   margin-top: 6px;
   font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color-muted);
 }
@@ -102,7 +112,7 @@ const pad = (value: number): string => String(value).padStart(2, '0')
   margin-bottom: 4px;
   font-family: var(--font-script);
   font-size: 2rem;
-  color: var(--color-royal);
+  color: var(--color-berry);
 }
 
 .tick-enter-active,

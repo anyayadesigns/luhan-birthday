@@ -4,21 +4,21 @@
 :root {
   --color-blush: #fde4ec;
   --color-rose: #f4a7c0;
-  --color-royal: #d4537e;
-  --color-royal-dark: #a8325e;
+  --color-berry: #a95178;
+  --color-berry-dark: #934268;
   --color-lavender: #d9c8f0;
   --color-lilac: #9b7fc7;
   --color-sky: #cfe8f7;
-  --color-gold: #c9a24b;
-  --color-gold-light: #ecd9a0;
-  --color-gold-dark: #9c7426;
+  --color-candy: #c8b3df;
+  --color-sugar: #f0e4f8;
+  --color-plum: #79628b;
   --color-cream: #fffaf6;
-  --color-ink: #4a2c3d;
-  --color-muted: #8a6b7c;
+  --color-ink: #69516f;
+  --color-muted: #78657e;
   --color-danger: #c0392b;
 
   --font-script: 'Great Vibes', 'Brush Script MT', cursive;
-  --font-display: 'Cinzel', 'Times New Roman', serif;
+  --font-display: 'Quicksand', system-ui, sans-serif;
   --font-body: 'Quicksand', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --radius-lg: 24px;
@@ -119,7 +119,7 @@ textarea {
 
 .section {
   position: relative;
-  padding-block: 56px;
+  padding-block: 48px;
 }
 
 /* ==========================================================================
@@ -128,9 +128,9 @@ textarea {
 .card {
   position: relative;
   padding: 28px 22px;
-  border: 1px solid rgba(201, 162, 75, 0.35);
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(190, 159, 200, 0.35);
+  border-radius: 28px 36px 28px 36px;
+  background: #fffdf9;
   box-shadow: var(--shadow-card);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
@@ -140,7 +140,7 @@ textarea {
   content: '';
   position: absolute;
   inset: 6px;
-  border: 1px solid rgba(201, 162, 75, 0.2);
+  border: 1px dashed rgba(190, 159, 200, 0.4);
   border-radius: calc(var(--radius-lg) - 6px);
   pointer-events: none;
 }
@@ -186,18 +186,18 @@ textarea {
 
 .btn--primary {
   color: #fff;
-  background: linear-gradient(135deg, var(--color-royal) 0%, #e57fa6 100%);
+  background: var(--color-berry);
   box-shadow: 0 12px 24px -12px rgba(212, 83, 126, 0.75);
 }
 
 .btn--outline {
-  color: var(--color-royal-dark);
+  color: var(--color-berry-dark);
   background: rgba(255, 255, 255, 0.8);
   border-color: rgba(212, 83, 126, 0.35);
 }
 
 .btn--sm {
-  min-height: 42px;
+  min-height: 44px;
   padding: 8px 16px;
   font-size: 0.85rem;
 }
@@ -271,4 +271,27 @@ textarea {
     opacity: 1;
     transform: none;
   }
+}
+
+/* Storybook chapters share soft backgrounds and scalloped dividers. */
+.countdown {
+  background: #fffaf6;
+}
+.gallery {
+  background: linear-gradient(180deg, #f3edf9, #fff6fa);
+}
+.details {
+  background: linear-gradient(180deg, #eef7f2, #fffaf6);
+}
+.rsvp {
+  background: #f9edf5;
+}
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 10px;
+  background: radial-gradient(circle at 12px 0, #fffaf6 10px, transparent 11px) 0 0 / 24px 12px
+    repeat-x;
+  pointer-events: none;
 }

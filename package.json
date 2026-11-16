@@ -1,9 +1,9 @@
 {
-  "name": "luhan-marie-birthday",
+  "name": "luhan-amari-birthday",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Royal princess-themed RSVP invitation for Luhan Marie's 1st birthday.",
+  "description": "Pastel candy fairytale RSVP invitation for Luhan Amari's 1st birthday.",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",

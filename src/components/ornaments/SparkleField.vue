@@ -41,7 +41,7 @@ const sparkles = computed(() =>
   position: absolute;
   width: var(--size);
   height: var(--size);
-  background: radial-gradient(circle, #fffbe8 0%, var(--color-gold-light) 45%, var(--color-gold) 100%);
+  background: radial-gradient(circle, #fffbe8 0%, var(--color-sugar) 45%, var(--color-candy) 100%);
   clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%);
   opacity: 0;
   animation: twinkle var(--duration) ease-in-out var(--delay) infinite;

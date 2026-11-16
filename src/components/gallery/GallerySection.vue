@@ -47,12 +47,17 @@ function openPhoto(index: number): void {
 </script>
 
 <template>
-  <section v-if="gallery.length" id="gallery" class="section gallery" aria-labelledby="gallery-title">
+  <section
+    v-if="gallery.length"
+    id="gallery"
+    class="section gallery"
+    aria-labelledby="gallery-title"
+  >
     <div class="container">
       <SectionHeading
         heading-id="gallery-title"
-        eyebrow="Moments with"
-        :title="`Our Little Princess`"
+        eyebrow="Sugar, smiles & little moments"
+        :title="`Our Little Sweetheart`"
         :subtitle="`A peek into ${celebrant.name}'s magical first year. Tap any photo to view it larger.`"
       />
 
@@ -85,9 +90,6 @@ function openPhoto(index: number): void {
                 decoding="async"
               />
               <span class="gallery__overlay" aria-hidden="true">
-                <span v-if="item.photo.caption" class="gallery__caption">
-                  {{ item.photo.caption }}
-                </span>
                 <span class="gallery__expand">
                   <BaseIcon name="expand" :size="14" :stroke-width="2.2" />
                 </span>
@@ -127,11 +129,11 @@ function openPhoto(index: number): void {
   position: relative;
   display: block;
   width: 100%;
-  padding: 0;
+  padding: 7px;
   overflow: hidden;
-  border: 3px solid #fff;
+  border: 1px solid #ebd7e7;
   border-radius: 18px;
-  background: var(--color-blush);
+  background: #fffdf9;
   box-shadow: var(--shadow-card);
   cursor: zoom-in;
   -webkit-tap-highlight-color: transparent;
@@ -148,29 +150,16 @@ function openPhoto(index: number): void {
   display: block;
   width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
+  border-radius: 12px;
   transition: transform 0.6s var(--ease-out);
 }
 
 .gallery__overlay {
   position: absolute;
-  inset: auto 0 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 8px;
-  padding: 28px 10px 10px 12px;
-  background: linear-gradient(180deg, transparent, rgba(74, 44, 61, 0.65));
+  right: 12px;
+  bottom: 12px;
   pointer-events: none;
-}
-
-.gallery__caption {
-  font-family: var(--font-script);
-  font-size: 1.25rem;
-  line-height: 1.1;
-  text-align: left;
-  color: #fff;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 .gallery__expand {
@@ -181,7 +170,7 @@ function openPhoto(index: number): void {
   height: 28px;
   margin-left: auto;
   border-radius: 50%;
-  color: var(--color-royal-dark);
+  color: var(--color-berry-dark);
   background: rgba(255, 255, 255, 0.9);
 }
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, ref } from 'vue'
 import BaseIcon from '@/components/base/BaseIcon.vue'
-import RoyalCrown from '@/components/ornaments/RoyalCrown.vue'
+import CandySweet from '@/components/ornaments/CandySweet.vue'
 import { eventConfig } from '@/config/event'
 import type { RsvpRecord } from '@/types/rsvp'
 import { buildRsvpMessage, buildSmsUrl } from '@/utils/links'
@@ -40,12 +40,12 @@ onBeforeUnmount(() => window.clearTimeout(copyTimer))
 
 <template>
   <div class="confirmation" role="status">
-    <RoyalCrown class="confirmation__crown" />
+    <CandySweet class="confirmation__candy" />
 
     <p class="confirmation__title">Thank you, {{ record.name }}!</p>
     <p class="confirmation__text">
       <template v-if="isAttending">
-        We're overjoyed that you'll celebrate with Princess {{ celebrant.name }}. We've reserved
+        We're overjoyed that you'll celebrate with {{ celebrant.name }}. We've reserved
         <strong>{{ record.guests }} {{ record.guests === 1 ? 'seat' : 'seats' }}</strong> for you.
       </template>
       <template v-else>
@@ -95,7 +95,7 @@ onBeforeUnmount(() => window.clearTimeout(copyTimer))
   text-align: center;
 }
 
-.confirmation__crown {
+.confirmation__candy {
   width: 64px;
   margin: 0 auto 8px;
   animation: pop 0.6s var(--ease-out);
@@ -105,7 +105,7 @@ onBeforeUnmount(() => window.clearTimeout(copyTimer))
   font-family: var(--font-script);
   font-size: 2.1rem;
   line-height: 1.2;
-  color: var(--color-royal);
+  color: var(--color-berry);
   overflow-wrap: anywhere;
 }
 
@@ -115,7 +115,7 @@ onBeforeUnmount(() => window.clearTimeout(copyTimer))
 }
 
 .confirmation__text strong {
-  color: var(--color-royal-dark);
+  color: var(--color-berry-dark);
 }
 
 .confirmation__notice {
@@ -134,7 +134,7 @@ onBeforeUnmount(() => window.clearTimeout(copyTimer))
 .confirmation__notice svg {
   flex-shrink: 0;
   margin-top: 2px;
-  color: var(--color-royal);
+  color: var(--color-berry);
 }
 
 .confirmation__actions {
@@ -153,7 +153,7 @@ onBeforeUnmount(() => window.clearTimeout(copyTimer))
   background: none;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--color-royal-dark);
+  color: var(--color-berry-dark);
   text-decoration: underline;
   text-underline-offset: 3px;
   cursor: pointer;

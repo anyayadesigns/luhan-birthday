@@ -14,14 +14,17 @@ defineProps<{
   <header v-reveal class="section-heading">
     <p v-if="eyebrow" class="section-heading__eyebrow">{{ eyebrow }}</p>
     <h2 :id="headingId" class="section-heading__title">{{ title }}</h2>
-    <svg class="section-heading__ornament" viewBox="0 0 160 16" aria-hidden="true">
-      <path d="M2 8h56M102 8h56" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+    <svg class="section-heading__ornament" viewBox="0 0 160 24" aria-hidden="true">
       <path
-        d="M80 1.5l2.1 4.4 4.9.7-3.5 3.4.8 4.8L80 12.5l-4.3 2.3.8-4.8L73 6.6l4.9-.7Z"
-        fill="currentColor"
+        d="M4 12h48m56 0h48"
+        stroke="#dbcbe8"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-dasharray="2 6"
       />
-      <circle cx="64" cy="8" r="2" fill="currentColor" />
-      <circle cx="96" cy="8" r="2" fill="currentColor" />
+      <path d="m69 9-9-4 2 7-2 7 9-4m22-6 9-4-2 7 2 7-9-4" fill="#cdbbe3" />
+      <rect x="68" y="4" width="24" height="16" rx="7" fill="#f4bfd5" />
+      <path d="m74 5 11 14m-4-14 9 11" stroke="#fff5ed" stroke-width="4" />
     </svg>
     <p v-if="subtitle" class="section-heading__subtitle">{{ subtitle }}</p>
   </header>
@@ -34,27 +37,29 @@ defineProps<{
 }
 
 .section-heading__eyebrow {
-  font-family: var(--font-script);
-  font-size: 1.6rem;
-  line-height: 1.1;
-  color: var(--color-royal);
-}
-
-.section-heading__title {
-  margin-top: 2px;
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 6vw, 1.85rem);
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  line-height: 1.5;
+  color: var(--color-berry);
+}
+
+.section-heading__title {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 6vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
   color: var(--color-ink);
 }
 
 .section-heading__ornament {
   width: 160px;
-  height: 16px;
+  height: 24px;
   margin: 12px auto 0;
-  color: var(--color-gold);
+  color: var(--color-candy);
 }
 
 .section-heading__subtitle {

@@ -1,4 +1,4 @@
-# 👑 Luhan Marie's 1st Birthday — Royal RSVP Invitation
+# 👑 Luhan Amari's 1st Birthday — Royal RSVP Invitation
 
 A mobile-first, princess-themed digital invitation built with **Vue 3**, **TypeScript** and **Vite**.
 No backend required.
@@ -68,7 +68,7 @@ their SMS app with a ready-made message to `rsvp.contactPhone`.
    | Name                     | Short answer    | —                                          |
    | Will you attend?         | Multiple choice | `Joyfully Accepts`, `Regretfully Declines` |
    | Number of guests         | Short answer    | —                                          |
-   | Message for Luhan Marie  | Paragraph       | —                                          |
+   | Message for Luhan Amari  | Paragraph       | —                                          |
 
    > The multiple-choice options must match `rsvp.googleForm.answers` **exactly** (same spelling & capitals).
    > In **Settings → Responses**, turn **off** "Collect email addresses" and "Limit to 1 response"

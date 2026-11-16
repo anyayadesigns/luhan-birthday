@@ -3,7 +3,7 @@ import { eventConfig } from '@/config/event'
 import { isGoogleFormConfigured, submitToGoogleForm } from '@/services/googleForm'
 import type { RsvpErrors, RsvpFormState, RsvpRecord, RsvpStatus } from '@/types/rsvp'
 
-const STORAGE_KEY = 'luhan-marie-birthday:rsvp'
+const STORAGE_KEY = 'luhan-amari-birthday:rsvp'
 const MIN_NAME_LENGTH = 2
 
 function readStoredRecord(): RsvpRecord | null {

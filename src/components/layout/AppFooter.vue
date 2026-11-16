@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import BaseIcon from '@/components/base/BaseIcon.vue'
-import RoyalCrown from '@/components/ornaments/RoyalCrown.vue'
+import CandySweet from '@/components/ornaments/CandySweet.vue'
 import { eventConfig } from '@/config/event'
 import { vReveal } from '@/directives/reveal'
 
@@ -10,10 +10,10 @@ const { celebrant, hosts, hashtag, credits } = eventConfig
 <template>
   <footer v-reveal class="footer">
     <div class="container">
-      <RoyalCrown class="footer__crown" />
+      <CandySweet class="footer__candy" />
       <p class="footer__note">
-        We can't wait to celebrate this magical milestone with you and make beautiful memories
-        together.
+        Thank you for being part of our sweetest chapter. We can’t wait to make magical memories
+        with you!
       </p>
       <p class="footer__signoff">With love,</p>
       <p class="footer__hosts">{{ hosts }}</p>
@@ -21,7 +21,7 @@ const { celebrant, hosts, hashtag, credits } = eventConfig
       <p class="footer__credit">
         Made with
         <BaseIcon name="heart" :size="14" class="footer__heart" />
-        for Princess {{ celebrant.name }}
+        for {{ celebrant.name }}
       </p>
 
       <div class="credits">
@@ -51,9 +51,11 @@ const { celebrant, hosts, hashtag, credits } = eventConfig
   /* Extra bottom space so the floating music button never covers the credits */
   padding: 24px 0 calc(88px + env(safe-area-inset-bottom, 0px));
   text-align: center;
+  background: linear-gradient(180deg, #fff8fb, #eee8f8);
+  border-radius: 48px 48px 0 0;
 }
 
-.footer__crown {
+.footer__candy {
   width: 48px;
   margin: 0 auto 16px;
 }
@@ -76,20 +78,20 @@ const { celebrant, hosts, hashtag, credits } = eventConfig
   font-family: var(--font-script);
   font-size: 2.2rem;
   line-height: 1.3;
-  color: var(--color-royal);
+  color: var(--color-berry);
 }
 
 .footer__hashtag {
   display: inline-block;
   margin-top: 12px;
   padding: 6px 16px;
-  border: 1px solid rgba(201, 162, 75, 0.5);
+  border: 1px solid rgba(190, 159, 200, 0.5);
   border-radius: 999px;
   font-family: var(--font-display);
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  color: var(--color-gold-dark);
+  color: var(--color-plum);
   background: rgba(255, 255, 255, 0.7);
 }
 
@@ -104,14 +106,14 @@ const { celebrant, hosts, hashtag, credits } = eventConfig
 }
 
 .footer__heart {
-  color: var(--color-royal);
+  color: var(--color-berry);
   fill: currentColor;
 }
 
 .credits {
   margin-top: 20px;
   padding-top: 18px;
-  border-top: 1px dashed rgba(201, 162, 75, 0.45);
+  border-top: 1px dashed rgba(190, 159, 200, 0.45);
 }
 
 .credits__label {
@@ -134,11 +136,11 @@ const { celebrant, hosts, hashtag, credits } = eventConfig
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-height: 36px;
+  min-height: 44px;
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
-  color: var(--color-royal-dark);
+  color: var(--color-berry-dark);
 }
 
 .credits__icon {
@@ -148,6 +150,6 @@ const { celebrant, hosts, hashtag, credits } = eventConfig
   height: 30px;
   border-radius: 50%;
   color: #fff;
-  background: linear-gradient(135deg, var(--color-royal), var(--color-lilac));
+  background: linear-gradient(135deg, var(--color-berry), var(--color-lilac));
 }
 </style>

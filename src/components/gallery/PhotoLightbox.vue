@@ -161,9 +161,6 @@ onBeforeUnmount(deactivate)
                 class="lightbox__image"
                 decoding="async"
               />
-              <figcaption v-if="current.caption" class="lightbox__caption">
-                {{ current.caption }}
-              </figcaption>
             </figure>
           </Transition>
         </div>
@@ -212,7 +209,7 @@ onBeforeUnmount(deactivate)
   display: flex;
   flex-direction: column;
   padding: env(safe-area-inset-top, 0px) 0 calc(env(safe-area-inset-bottom, 0px) + 16px);
-  background: rgba(42, 18, 34, 0.94);
+  background: rgba(255, 246, 251, 0.97);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   touch-action: pan-y pinch-zoom;
@@ -230,7 +227,7 @@ onBeforeUnmount(deactivate)
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.14em;
-  color: var(--color-gold-light);
+  color: var(--color-plum);
 }
 
 .lightbox__icon-button {
@@ -239,10 +236,10 @@ onBeforeUnmount(deactivate)
   width: 44px;
   height: 44px;
   padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid #dac6e6;
   border-radius: 50%;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-berry-dark);
+  background: #fffdfb;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition:
@@ -280,18 +277,9 @@ onBeforeUnmount(deactivate)
   max-height: calc(100dvh - 190px);
   border-radius: var(--radius-sm);
   object-fit: contain;
-  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 24px 48px -20px rgba(122, 80, 140, 0.25);
   user-select: none;
   -webkit-user-drag: none;
-}
-
-.lightbox__caption {
-  margin-top: 14px;
-  font-family: var(--font-script);
-  font-size: 1.7rem;
-  line-height: 1.2;
-  text-align: center;
-  color: #fff;
 }
 
 .lightbox__nav {
@@ -322,8 +310,8 @@ onBeforeUnmount(deactivate)
 
 .lightbox__dot {
   position: relative;
-  width: 24px;
-  height: 24px;
+  width: 44px;
+  height: 44px;
   padding: 0;
   border: 0;
   background: none;
@@ -338,7 +326,7 @@ onBeforeUnmount(deactivate)
   width: 7px;
   height: 7px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.35);
+  background: #d8c6e5;
   transform: translate(-50%, -50%);
   transition:
     width 0.25s var(--ease-out),
@@ -347,7 +335,7 @@ onBeforeUnmount(deactivate)
 
 .lightbox__dot.is-active::after {
   width: 18px;
-  background: var(--color-gold-light);
+  background: var(--color-berry);
 }
 
 /* Open / close */
