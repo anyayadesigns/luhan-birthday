@@ -293,9 +293,9 @@ onBeforeUnmount(unlockScroll)
 }
 .envelope__letter-frame {
   position: absolute;
-  top: 20%;
-  left: 23%;
-  width: 54%;
+  top: 15%;
+  left: 25%;
+  width: 50%;
   padding: 4px;
   border: 2px solid #fffafc;
   border-radius: 48% 48% 34% 34% / 35% 35% 24% 24%;
@@ -312,7 +312,7 @@ onBeforeUnmount(unlockScroll)
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 287 / 323;
+  aspect-ratio: 1086 / 1448;
   object-fit: contain;
   border: 2px solid #fff;
   border-radius: 46% 46% 30% 30% / 34% 34% 22% 22%;

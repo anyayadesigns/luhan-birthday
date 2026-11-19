@@ -163,9 +163,9 @@ const time = formatTime(schedule.start, schedule.timeZone)
 }
 .hero__portrait {
   position: absolute;
-  top: 20%;
-  left: 23%;
-  width: 54%;
+  top: 15%;
+  left: 25%;
+  width: 50%;
   margin: 0;
 }
 .hero__portrait-frame {
@@ -186,7 +186,7 @@ const time = formatTime(schedule.start, schedule.timeZone)
 .hero__photo {
   width: 100%;
   height: auto;
-  aspect-ratio: 287 / 323;
+  aspect-ratio: 1086 / 1448;
   object-fit: contain;
   border: 4px solid white;
   border-radius: 46% 46% 30% 30% / 34% 34% 22% 22%;
